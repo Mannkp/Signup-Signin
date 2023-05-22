@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> -->
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    body{
+        background-image: url(OIG.jpeg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+    .main{
+        box-sizing: border-box;
+        padding: 20px;
+        margin: 15vh auto auto auto;
+        border: 2px solid #eee;
+        width:28vw;
+        /* height: 70vh; */
+        height: fit-content ;
+        border-radius: 10px;
+        background-color: rgba(237, 237, 237, 1);
+    }
+    h1{
+        font-size: 2rem;
+        margin: 20px auto 60px auto;
+        border-bottom: 5px solid red;
+    }
+    input{
+            width: 85%;
+            margin: 10px 0px;
+            padding: 16px;
+            font-size: 1em;
+            /* border-radius: 5px; */
+        }
+    .border_mk{
+        border-top: 0px;
+        border-left:0px;
+        border-right: 0px;
+    }
+    p{
+        margin-top: 20px;
+    }
+    #login_f1, #signup_f2{
+        box-sizing: border-box;
+        width: 70%;
+        font-size: 1em;
+        padding: 5px 20px;
+        margin: 10% 15% 2% 15%;
+        border-radius: 50px;
+    }
+    #signup, #login_f2{
+        box-sizing: border-box;
+        width: 70%;
+        font-size: 1em;
+        padding: 5px 20px;
+        margin: 1% 15% 1% 15%;
+        border-radius: 50px;
+    }
+    #login_f1:hover,  #signup_f2:hover{
+        cursor: pointer;
+        background-color: rgba(1,1,1,0.4);
+        color: white;   
+        transition: all 0.4s ease-in-out;
+    }
+    /* #newUserHelp{
+        margin-top: 10px;
+    } */
+    .hidden{
+        display: none;
+    }
+    .show{
+        display: block;
+        /* width: fit-content;
+        height: fit-content; */
+        /* background-color: yellow;
+        font-weight: 900; */
+    }
+    #error{
+        color: red;
+        border: 2px solid black;
+        height: fit-content;
+        width: 50vw;
+        margin: 10px auto; 
+        box-sizing: border-box;
+        padding: 10px;
+        background-color: rgba(1, 1, 1, 1);
+    }
+
+</style>
+<body>
+    <!-- <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div> -->
+    <div class="main show" id="signinForm">
+            <h1>SignIn to your Account</h1>
+            <!-- onsubmit="return checkLogin()" -->
+            <form action="login.php" method="post" id="form1">
+                <label for="name_f1"><p>UserName: </p></label>
+                <input type="text" name="name" id="name_f1" placeholder="Type your UserName" class="border_mk"><br>
+                
+                <label for="pass_f1"><p>Password: </p></label>
+                <input type="password" name="paswd" id="pass_f1" placeholder="Type your Password" class="border_mk" ><br>
+                
+                <input type="submit" value="LogIn" id="login_f1" name="login">
+                <input type="button" value="New User? SignUp" id="signup" name="signup">
+                <p id="newUserHelp" class="hidden ">New User? => SignUp</p>
+            </form>
+            <!-- <p id="error" class="hidden">
+                <button id="reset" class="hidden" style="background-color: aqua;">reset error</button>
+            </p> -->
+    </div>
+    <div class="main hidden" id="signupForm">
+            <h1>SignUp to create your New Account</h1>
+            <form action="login11.php" method="post" id="form2">
+                <label for="name_f2"><p>UserName: </p></label>
+                <input type="text" name="name" id="name_f2" placeholder="Type your New UserName" class="border_mk"><br>
+                
+                <label for="pass_f2"><p>Password: </p></label>
+                <input type="password" name="paswd" id="pass_f2" placeholder="Type your New Password" class="border_mk" ><br>
+                
+                <label for="c_pass_f2"><p>Confirm Password: </p></label>
+                <input type="password" name="c_paswd" id="c_pass_f2" placeholder="Type your New Password Again" class="border_mk" ><br>
+                
+                <input type="submit" value="SignUp" id="signup_f2" name="signup">
+                <input type="button" value="Already have Account? LogIn" id="login_f2" name="login">
+            </form>
+    </div>
+     <p id="error" class="hidden ">
+        <strong>Error:</strong>
+                <button id="reset">reset error</button>
+     </p>
+    <script src="app.js"></script>
+</body>
+</html>
